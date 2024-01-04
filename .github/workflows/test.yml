@@ -23,11 +23,7 @@ jobs:
       - name: Add Rollbar
         run: echo export default "'${{ secrets.rollbar_token }}'" > ./src/renderer/lib/rollbarAccessToken.ts
       - name: Build and Test
-        run: npm run build && npm test
-      - name: Lint
-        run: npm run lint
-      - name: Package
-        run: npm run package
+        run: npm run publish
       - name: Install Snapcraft
         uses: samuelmeuli/action-snapcraft@v1
         # Only install Snapcraft on Ubuntu
